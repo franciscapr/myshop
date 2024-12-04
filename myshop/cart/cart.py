@@ -36,7 +36,7 @@ class Cart:
     # Devolvemos los elementos totales del carrito
     def __len__(self):
         """ 
-        Coun all item in the cart.
+        Count all item in the cart.
         """
         return sum(item['quantity'] for item in self.cart.values())
     
@@ -44,7 +44,7 @@ class Cart:
     # Método para calcular el costo toal de los artículos en el carrito
     def get_total_price(self):
         return sum(
-            Decimal(item['price'] * item['quantity'] for item in self.cart.values())
+            Decimal(item['price']) * item['quantity'] for item in self.cart.values()
         )
     
     

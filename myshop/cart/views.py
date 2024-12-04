@@ -30,5 +30,5 @@ def cart_remove(request, product_id):  # Recibe el ID del producto como parámet
 
 # Vista para mostrar el carrito con los productos
 def cart_detail(request):
-    cart = Cart(request)
+    cart = Cart(request)    # Obtenemos el carrito actual para mostrarlo
     return render(request, 'cart/detail.html', {'cart': cart})
