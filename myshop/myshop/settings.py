@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cart.apps.CartConfig',
     'shop.apps.ShopConfig',
 ]
 
@@ -125,3 +126,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = 'media/'    # Es la url base que sirve a los archivos multimedia cargados por los usuarios
 MEDIA_ROOT = BASE_DIR / 'media'    # Es la ruta local donde residen estos archivos
+
+CART_SESSION_ID = 'cart'    # Esta es la clave que usaremos para almacenar el carrito en la session del user
