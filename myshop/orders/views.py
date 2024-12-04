@@ -2,6 +2,7 @@ from django.shortcuts import render
 from cart.cart import Cart
 from .forms import OrderCreateForm
 from .models import OrderItem
+from .tasks import order_created
 
 
 # Obtenemos el carrito acutal de la sesión con cart = Cart(request)
@@ -20,6 +21,7 @@ def order_create(request):
                 )
                 # clear the cart
             cart.clear()
+            order_created.delay(order.id)    # Ejecutamos de manera asincrona
             return render(
                 request, 'orders/order/created.html', {'order': order}
             )

@@ -130,3 +130,5 @@ MEDIA_URL = 'media/'    # Es la url base que sirve a los archivos multimedia car
 MEDIA_ROOT = BASE_DIR / 'media'    # Es la ruta local donde residen estos archivos
 
 CART_SESSION_ID = 'cart'    # Esta es la clave que usaremos para almacenar el carrito en la session del user
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
