@@ -41,9 +41,9 @@ def order_create(request):
     )
 
 
-@staff_member_required
+@staff_member_required    # Solo los usuarios del personal pueden acceder a esta vista
 def admin_order_detail(request, order_id):
-    order = get_object_or_404(Order, id=order_id)
+    order = get_object_or_404(Order, id=order_id)    # Obtenemos el objeto order con le id
     return render(
         request, 'admin/orders/order/detail.html', {'order': order}
     )
@@ -52,11 +52,11 @@ def admin_order_detail(request, order_id):
 @staff_member_required
 def admin_order_pdf(request, order_id):
     order = get_object_or_404(Order, id=order_id)
-    html = render_to_string('orders/order/pdf.html', {'order': order})
-    response = HttpResponse(content_type='application/pdf')
+    html = render_to_string('orders/order/pdf.html', {'order': order})    # El html se guarda en la variable html
+    response = HttpResponse(content_type='application/pdf')    # Generamos un nuevo objeto HttpResponse
     response['Content-Disposition'] = f'filename=order_{order.id}.pdf'
-    weasyprint.HTML(string=html).write_pdf(
+    weasyprint.HTML(string=html).write_pdf(    # Usamos weasyprint para generar un archivo pdf a partir del html
         response,
-        stylesheets=[weasyprint.CSS(finders.find('css/pdf.css'))],
+        stylesheets=[weasyprint.CSS(finders.find('css/pdf.css'))],    # Utilizamos el pdf.css para agregar estilos css al archivo pdf
     )
     return response
