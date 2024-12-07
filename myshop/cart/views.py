@@ -3,6 +3,7 @@ from django.views.decorators.http import require_POST
 from shop.models import Product
 from .cart import Cart
 from .forms import CartAddProductForm
+from coupons.forms import CouponApplyForm
 
 # Vista para agregar prodcutos al acrrito o actualizar las cantidades de productos existentes.
 @require_POST    # Utilizamos el decorador para solo permitir solicitudes POST
@@ -35,4 +36,5 @@ def cart_detail(request):
         item['update_quantity_form'] = CartAddProductForm(    # Creamos una instancia para cada elemento del carrito
             initial={'quantity': item['quantity'], 'override': True}    # Inicializamos el form con la cantidad actual
         )
-    return render(request, 'cart/detail.html', {'cart': cart})
+        coupon_apply_form = CouponApplyForm()
+    return render(request, 'cart/detail.html', {'cart': cart, 'coupon_apply_form': coupon_apply_form})
