@@ -41,6 +41,18 @@ def payment_process(request):
                     'quantity': item.quantity,    # Cantidad de unidades a comprar
                 }
             )
+
+        # Stripe coupon
+        if order.coupon:
+            stripe_coupon = stripe.Coupon.create(
+                name=order.coupon.code,    # Se usa el nombre del cupon relacionado con el objeto del pedido
+                percent_off=order.discount,    # Se mite el descuento del objeto del pedido
+                duration='once'    # Se usa el valor once, indica a stripe que este es un cupòn para un pago ùnico
+            )
+            session_data['discounts']=[{'coupon': stripe_coupon.id}]    # CReamos el cupon y su id se agrega al diccionario de session_data que se utiliza para crear la sesiòn de stripe checkout
+
+
+
         # Create stripe checkout session
         session = stripe.checkout.Session.create(**session_data)
         # redirect to stripe payment form
