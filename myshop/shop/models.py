@@ -1,9 +1,9 @@
 from django.db import models
 from django.urls import reverse
-from parler.models import TranslatableModel, TranslatedField
+from parler.models import TranslatableModel, TranslatedFields
 
 class Category(TranslatableModel):
-    translations = TranslatedField(
+    translations = TranslatedFields(
     name = models.CharField(max_length=200),
     slug = models.SlugField(max_length=200, unique=True),
     )
@@ -26,7 +26,7 @@ class Category(TranslatableModel):
     
     
 class Product(TranslatableModel):
-    translations = TranslatedField(
+    translations = TranslatedFields(
     name = models.CharField(max_length=200),                         # Nombre del producto
     slug = models.SlugField(max_length=200),                         # Slug del producto para crear mejores url
     description = models.TextField(blank=True)

@@ -164,7 +164,7 @@ LOCALE_PATHS = [
 ]
 
 # Djanfo-parlet settings
-PARLET_LANGUAGES = {
+PARLER_LANGUAGES = {
     None: (
         {'code': 'en'},
         {'code': 'es'},
