@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-09 12:55-0300\n"
+"POT-Creation-Date: 2024-12-09 14:03-0300\n"
 "PO-Revision-Date: 2024-12-09 16:03+0000\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,13 +28,11 @@ msgstr "Cantidad"
 msgid "Your shopping cart"
 msgstr "Su carro"
 
-#: cart/templates/cart/detail.html:13
-#: payment/templates/payment/process.html:11
+#: cart/templates/cart/detail.html:13 payment/templates/payment/process.html:11
 msgid "Image"
 msgstr "Imagen"
 
-#: cart/templates/cart/detail.html:14
-#: payment/templates/payment/process.html:12
+#: cart/templates/cart/detail.html:14 payment/templates/payment/process.html:12
 msgid "Product"
 msgstr "Producto"
 
@@ -48,8 +46,7 @@ msgstr "Eliminar"
 msgid "Unite price"
 msgstr "Precio unitario"
 
-#: cart/templates/cart/detail.html:18
-#: payment/templates/payment/process.html:13
+#: cart/templates/cart/detail.html:18 payment/templates/payment/process.html:13
 msgid "Price"
 msgstr "Precio"
 
@@ -57,17 +54,12 @@ msgstr "Precio"
 msgid "Update"
 msgstr "Actualizar"
 
-#: cart/templates/cart/detail.html:53
-#: payment/templates/payment/process.html:33
+#: cart/templates/cart/detail.html:53 payment/templates/payment/process.html:33
 msgid "Subtotal"
 msgstr "Subtotal"
 
 #: cart/templates/cart/detail.html:59
 #, python-format
-#| msgid ""
-#| "\n"
-#| "              \"%(code)s\" coupon (%(discount)s%% off)\n"
-#| "            "
 msgid ""
 "\n"
 "                \"%(code)s\" coupon (%(discount)s%% off)\n"
@@ -77,8 +69,7 @@ msgstr ""
 "Cupón \"%(code)s\" (%(discount)s%% descuento)\n"
 "            "
 
-#: cart/templates/cart/detail.html:71
-#: payment/templates/payment/process.html:15
+#: cart/templates/cart/detail.html:71 payment/templates/payment/process.html:15
 #: payment/templates/payment/process.html:52
 msgid "Total"
 msgstr "Total"
@@ -110,13 +101,29 @@ msgstr "Comprar"
 msgid "Coupon"
 msgstr "Cupón"
 
-#: myshop/settings.py:117
+#: myshop/settings.py:118
 msgid "English"
 msgstr "Inglés"
 
-#: myshop/settings.py:118
+#: myshop/settings.py:119
 msgid "Spanish"
 msgstr "Español"
+
+#: myshop/urls.py:29
+msgid "cart/"
+msgstr "carro/"
+
+#: myshop/urls.py:30
+msgid "orders/"
+msgstr "pedidos/"
+
+#: myshop/urls.py:31
+msgid "payment/"
+msgstr "pago/"
+
+#: myshop/urls.py:32
+msgid "coupons/"
+msgstr "cupon/"
 
 #: payment/templates/payment/canceled.html:4
 msgid "Payment canceled"
@@ -165,6 +172,18 @@ msgstr ""
 msgid "Pay now"
 msgstr "Pagar ahora"
 
+#: payment/urls.py:7
+msgid "process/"
+msgstr "procesar/"
+
+#: payment/urls.py:8
+msgid "completed/"
+msgstr "completado/"
+
+#: payment/urls.py:9
+msgid "canceled/"
+msgstr "cancelado/"
+
 #: shop/templates/shop/base.html:6 shop/templates/shop/base.html:12
 msgid "My shop"
 msgstr "Mi tienda"
@@ -179,14 +198,6 @@ msgstr "Su carro"
 
 #: shop/templates/shop/base.html:36
 #, python-format
-#| msgid ""
-#| "\n"
-#| "                %(items)s item, $%(total)s\n"
-#| "              "
-#| msgid_plural ""
-#| "\n"
-#| "                %(items)s items, $%(total)s\n"
-#| "              "
 msgid ""
 "\n"
 "              %(items)s item, $%(total)s\n"
@@ -226,24 +237,3 @@ msgstr "Categorías"
 #: shop/templates/shop/product/list.html:13
 msgid "All"
 msgstr "Todos"
-
-#~ msgid "cart/"
-#~ msgstr "carro/"
-
-#~ msgid "orders/"
-#~ msgstr "pedidos/"
-
-#~ msgid "payment/"
-#~ msgstr "pago/"
-
-#~ msgid "coupons/"
-#~ msgstr "cupon/"
-
-#~ msgid "process/"
-#~ msgstr "procesar/"
-
-#~ msgid "completed/"
-#~ msgstr "completado/"
-
-#~ msgid "canceled/"
-#~ msgstr "cancelado/"
