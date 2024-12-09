@@ -19,24 +19,24 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 #: orders/models.py:9
 msgid "first_name"
-msgstr ""
+msgstr "nombre"
 
 #: orders/models.py:10
 msgid "last_name"
-msgstr ""
+msgstr "apellidos"
 
 #: orders/models.py:11
 msgid "e-mail"
-msgstr ""
+msgstr "e-mail"
 
 #: orders/models.py:12
 msgid "address"
-msgstr ""
+msgstr "direcciòn"
 
 #: orders/models.py:13
 msgid "postal code"
-msgstr ""
+msgstr "còdigo postal"
 
 #: orders/models.py:14
 msgid "city"
-msgstr ""
+msgstr "ciudad"
